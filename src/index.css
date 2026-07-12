@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+@theme {
+  /* 60% Dominant */
+  --color-pure-white: #FFFFFF;
+  --color-slate-gray: #F8FAFC;
+  
+  /* 30% Primary */
+  --color-royal-blue: #1A4493;
+  --color-royal-blue-hover: #143573;
+  --color-emerald-green: #0D7A5F;
+  --color-emerald-green-light: #129E7B;
+
+  /* 10% Accent */
+  --color-amber-yellow: #F5A623;
+  --color-amber-yellow-hover: #D98C15;
+
+  /* Typography Colors */
+  --color-dark-slate: #0F172A;
+  --color-muted-slate: #475569;
+
+  --font-display: "Inter", sans-serif;
+  --font-body: "Inter", sans-serif;
+  
+  --animate-fade-in: fade-in 0.8s ease-out forwards;
+  --animate-slide-up: slide-up 0.8s ease-out forwards;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@layer base {
+  body {
+    @apply bg-slate-gray text-dark-slate font-body antialiased selection:bg-royal-blue/20;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-bold text-dark-slate tracking-tight;
+  }
+}
